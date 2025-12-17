@@ -4,11 +4,12 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { FileCode2, Download, Plus, Trash2, Copy, Check } from "lucide-react";
+import { FileCode2, Download, Plus, Trash2, Copy, Check, Pencil } from "lucide-react";
 import { toast } from "sonner";
 
 interface TimeSeriesEntry {
   id: string;
+  name: string;
   senderEIC: string;
   senderName: string;
   receiverEIC: string;
@@ -16,6 +17,8 @@ interface TimeSeriesEntry {
   inDomain: string;
   outDomain: string;
   hourlyValues: number[];
+  minPrice: number | null;
+  maxPrice: number | null;
 }
 
 const DOMAINS = [
@@ -55,6 +58,7 @@ const MMSXMLGenerator = () => {
   const [timeSeries, setTimeSeries] = useState<TimeSeriesEntry[]>([
     {
       id: generateUUID(),
+      name: "TimeSeries #1",
       senderEIC: "",
       senderName: "",
       receiverEIC: "",
@@ -62,16 +66,21 @@ const MMSXMLGenerator = () => {
       inDomain: "10Y1001C--000182",
       outDomain: "10Y1001C--000182",
       hourlyValues: Array(24).fill(0),
+      minPrice: null,
+      maxPrice: null,
     },
   ]);
+  const [editingNameId, setEditingNameId] = useState<string | null>(null);
   const [generatedXML, setGeneratedXML] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
 
   const addTimeSeries = () => {
+    const newIndex = timeSeries.length + 1;
     setTimeSeries([
       ...timeSeries,
       {
         id: generateUUID(),
+        name: `TimeSeries #${newIndex}`,
         senderEIC: "",
         senderName: "",
         receiverEIC: "",
@@ -79,6 +88,8 @@ const MMSXMLGenerator = () => {
         inDomain: "10Y1001C--000182",
         outDomain: "10Y1001C--000182",
         hourlyValues: Array(24).fill(0),
+        minPrice: null,
+        maxPrice: null,
       },
     ]);
   };
@@ -343,13 +354,32 @@ const MMSXMLGenerator = () => {
 
           {/* TimeSeries */}
           <div className="space-y-4">
-            {timeSeries.map((ts, tsIndex) => (
+            {timeSeries.map((ts) => (
               <Card key={ts.id}>
                 <CardHeader className="pb-3">
                   <div className="flex items-center justify-between">
-                    <CardTitle className="text-base">
-                      TimeSeries #{tsIndex + 1}
-                    </CardTitle>
+                    {editingNameId === ts.id ? (
+                      <Input
+                        value={ts.name}
+                        onChange={(e) => updateTimeSeries(ts.id, "name", e.target.value)}
+                        onBlur={() => setEditingNameId(null)}
+                        onKeyDown={(e) => e.key === "Enter" && setEditingNameId(null)}
+                        autoFocus
+                        className="h-8 text-base font-semibold max-w-[200px]"
+                      />
+                    ) : (
+                      <div className="flex items-center gap-2">
+                        <CardTitle className="text-base">{ts.name}</CardTitle>
+                        <Button
+                          variant="ghost"
+                          size="sm"
+                          onClick={() => setEditingNameId(ts.id)}
+                          className="h-6 w-6 p-0"
+                        >
+                          <Pencil className="w-3 h-3" />
+                        </Button>
+                      </div>
+                    )}
                     {timeSeries.length > 1 && (
                       <Button
                         variant="ghost"
@@ -419,6 +449,29 @@ const MMSXMLGenerator = () => {
                         onChange={(e) => updateTimeSeries(ts.id, "receiverEIC", e.target.value)}
                         placeholder="62X..."
                         className="font-mono text-sm"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-4 border-t pt-4">
+                    <div className="space-y-2">
+                      <Label>Мінімальна ціна (грн/МВт·год)</Label>
+                      <Input
+                        type="number"
+                        value={ts.minPrice ?? ""}
+                        onChange={(e) => updateTimeSeries(ts.id, "minPrice", e.target.value ? parseFloat(e.target.value) : null)}
+                        placeholder="Не встановлено"
+                        className="text-sm"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <Label>Максимальна ціна (грн/МВт·год)</Label>
+                      <Input
+                        type="number"
+                        value={ts.maxPrice ?? ""}
+                        onChange={(e) => updateTimeSeries(ts.id, "maxPrice", e.target.value ? parseFloat(e.target.value) : null)}
+                        placeholder="Не встановлено"
+                        className="text-sm"
                       />
                     </div>
                   </div>
