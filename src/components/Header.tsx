@@ -23,6 +23,9 @@ const Header = () => {
             <a href="#calculator" className="text-sidebar-foreground/70 hover:text-energy-cyan transition-colors text-sm font-medium">
               Калькулятор
             </a>
+            <a href="#prices" className="text-sidebar-foreground/70 hover:text-energy-cyan transition-colors text-sm font-medium">
+              Ціни
+            </a>
             <a href="#info" className="text-sidebar-foreground/70 hover:text-energy-cyan transition-colors text-sm font-medium">
               Інформація
             </a>
@@ -65,6 +68,13 @@ const Header = () => {
                 className="text-sidebar-foreground/70 hover:text-energy-cyan transition-colors text-sm font-medium"
               >
                 Калькулятор
+              </a>
+              <a
+                href="#prices"
+                onClick={() => setIsMenuOpen(false)}
+                className="text-sidebar-foreground/70 hover:text-energy-cyan transition-colors text-sm font-medium"
+              >
+                Ціни
               </a>
               <a
                 href="#info"
