@@ -18,9 +18,12 @@ const Header = () => {
           </a>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-6">
             <a href="#calculator" className="text-sidebar-foreground/70 hover:text-energy-cyan transition-colors text-sm font-medium">
               Калькулятор
+            </a>
+            <a href="#mms-xml" className="text-sidebar-foreground/70 hover:text-energy-cyan transition-colors text-sm font-medium">
+              MMS XML
             </a>
             <a href="#prices" className="text-sidebar-foreground/70 hover:text-energy-cyan transition-colors text-sm font-medium">
               Ціни
@@ -67,6 +70,13 @@ const Header = () => {
                 className="text-sidebar-foreground/70 hover:text-energy-cyan transition-colors text-sm font-medium"
               >
                 Калькулятор
+              </a>
+              <a
+                href="#mms-xml"
+                onClick={() => setIsMenuOpen(false)}
+                className="text-sidebar-foreground/70 hover:text-energy-cyan transition-colors text-sm font-medium"
+              >
+                MMS XML
               </a>
               <a
                 href="#prices"
