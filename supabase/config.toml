@@ -1,0 +1,4 @@
+project_id = "viyskplwdndnvdepewit"
+
+[functions.ueex-prices]
+verify_jwt = false
