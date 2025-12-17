@@ -1,4 +1,5 @@
-import { Zap, ExternalLink } from "lucide-react";
+import { ExternalLink } from "lucide-react";
+import logoEsg from "@/assets/logo-esg.png";
 
 const Footer = () => {
   return (
@@ -6,15 +7,13 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 rounded-xl bg-gradient-energy flex items-center justify-center">
-                <Zap className="w-5 h-5 text-primary-foreground" />
-              </div>
-              <span className="font-bold text-lg text-sidebar-foreground">ЕнергоКалькулятор</span>
+            <div className="flex items-center gap-3 mb-4">
+              <img src={logoEsg} alt="ESG Logo" className="h-10 w-auto" />
+              <span className="font-bold text-lg text-sidebar-foreground">Деномінація Е/Е</span>
             </div>
             <p className="text-sidebar-foreground/60 text-sm">
               Інструмент для розрахунку вартості купівлі та продажу електроенергії 
-              на українському біржовому ринку
+              на українському біржовому ринку від Energy Store Group
             </p>
           </div>
 
@@ -71,7 +70,7 @@ const Footer = () => {
 
         <div className="pt-8 border-t border-sidebar-border text-center">
           <p className="text-sidebar-foreground/40 text-sm">
-            © {new Date().getFullYear()} ЕнергоКалькулятор. Всі права захищено.
+            © {new Date().getFullYear()} Energy Store Group. Деномінація Е/Е. Всі права захищено.
           </p>
         </div>
       </div>
