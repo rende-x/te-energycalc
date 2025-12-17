@@ -1,5 +1,6 @@
-import { Zap, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import logoEsg from "@/assets/logo-esg.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -9,12 +10,10 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <a href="/" className="flex items-center gap-2">
-            <div className="w-9 h-9 rounded-lg bg-gradient-energy flex items-center justify-center">
-              <Zap className="w-5 h-5 text-primary-foreground" />
-            </div>
+          <a href="/" className="flex items-center gap-3">
+            <img src={logoEsg} alt="ESG Logo" className="h-10 w-auto" />
             <span className="font-bold text-sidebar-foreground hidden sm:block">
-              ЕнергоКалькулятор
+              Деномінація Е/Е
             </span>
           </a>
 

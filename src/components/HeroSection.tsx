@@ -25,20 +25,20 @@ const HeroSection = () => {
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-energy-blue/20 border border-energy-blue/30 mb-8 animate-fade-in">
             <Zap className="w-4 h-4 text-energy-cyan" />
             <span className="text-sm font-medium text-energy-cyan">
-              Українська Енергетична Біржа
+              Energy Store Group
             </span>
           </div>
 
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight animate-slide-up text-sidebar-foreground">
-            Калькулятор{" "}
+            Деномінація{" "}
             <span className="bg-gradient-to-r from-energy-blue to-energy-green bg-clip-text text-transparent">
-              продажу електроенергії
+              Е/Е
             </span>
           </h1>
 
           <p className="text-lg md:text-xl text-sidebar-foreground/70 mb-12 max-w-2xl mx-auto animate-slide-up" style={{ animationDelay: "0.2s" }}>
-            Розрахуйте вартість продажу та купівлі електричної енергії на біржових аукціонах 
-            відповідно до правил НКРЕКП та регламенту УEEX
+            Калькулятор для розрахунку вартості продажу та купівлі електричної енергії на біржових аукціонах 
+            відповідно до правил НКРЕКП та регламенту УЕЕХ
           </p>
 
           <div className="flex flex-wrap justify-center gap-4 mb-16 animate-slide-up" style={{ animationDelay: "0.4s" }}>
