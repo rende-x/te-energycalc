@@ -30,7 +30,7 @@ const HeroSection = () => {
           </div>
 
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight animate-slide-up text-sidebar-foreground">
-            Деномінація{" "}
+            Номінація{" "}
             <span className="bg-gradient-to-r from-energy-blue to-energy-green bg-clip-text text-transparent">
               Е/Е
             </span>
@@ -62,7 +62,7 @@ const HeroSection = () => {
             <div className="p-6 rounded-2xl bg-sidebar-accent/30 border border-energy-blue/20 backdrop-blur-sm">
               <TrendingUp className="w-8 h-8 text-energy-blue mb-3 mx-auto" />
               <div className="text-3xl font-bold text-sidebar-foreground mb-1">24/7</div>
-              <div className="text-sm text-sidebar-foreground/60">Доступ до торгів</div>
+              <div className="text-sm text-sidebar-foreground/60">Доступ</div>
             </div>
             <div className="p-6 rounded-2xl bg-sidebar-accent/30 border border-energy-cyan/20 backdrop-blur-sm">
               <Shield className="w-8 h-8 text-energy-cyan mb-3 mx-auto" />

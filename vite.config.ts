@@ -17,8 +17,8 @@ export default defineConfig(({ mode }) => ({
       registerType: "autoUpdate",
       includeAssets: ["favicon.ico", "logo-192.png", "logo-512.png"],
       manifest: {
-        name: "Деномінація Е/Е - Energy Store Group",
-        short_name: "Деномінація Е/Е",
+        name: "Номінація Е/Е - Energy Store Group",
+        short_name: "Номінація Е/Е",
         description: "Калькулятор для розрахунку вартості купівлі та продажу електроенергії на УЕЕХ",
         theme_color: "#22c55e",
         background_color: "#0f172a",
