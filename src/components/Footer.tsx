@@ -9,7 +9,7 @@ const Footer = () => {
           <div>
             <div className="flex items-center gap-3 mb-4">
               <img src={logoEsg} alt="ESG Logo" className="h-10 w-auto" />
-              <span className="font-bold text-lg text-sidebar-foreground">Деномінація Е/Е</span>
+              <span className="font-bold text-lg text-sidebar-foreground">Номінація Е/Е</span>
             </div>
             <p className="text-sidebar-foreground/60 text-sm">
               Інструмент для розрахунку вартості купівлі та продажу електроенергії 
@@ -70,7 +70,7 @@ const Footer = () => {
 
         <div className="pt-8 border-t border-sidebar-border text-center">
           <p className="text-sidebar-foreground/40 text-sm">
-            © {new Date().getFullYear()} Energy Store Group. Деномінація Е/Е. Всі права захищено.
+            © {new Date().getFullYear()} Energy Store Group. Номінація Е/Е. Всі права захищено.
           </p>
         </div>
       </div>

@@ -13,7 +13,7 @@ const Header = () => {
           <a href="/" className="flex items-center gap-3">
             <img src={logoEsg} alt="ESG Logo" className="h-10 w-auto" />
             <span className="font-bold text-sidebar-foreground hidden sm:block">
-              Деномінація Е/Е
+              Номінація Е/Е
             </span>
           </a>
 
