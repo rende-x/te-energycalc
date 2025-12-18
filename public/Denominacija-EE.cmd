@@ -81,9 +81,9 @@ if not "%CHROME_PATH%"=="" (
     goto end
 )
 
-set "SHORTCUT_PATH=%USERPROFILE%\Desktop\Деномінація ЕЕ.lnk"
+set "SHORTCUT_PATH=%USERPROFILE%\Desktop\Номінація ЕЕ.lnk"
 
-powershell -Command "$ws = New-Object -ComObject WScript.Shell; $s = $ws.CreateShortcut('%SHORTCUT_PATH%'); $s.TargetPath = '%BROWSER_PATH%'; $s.Arguments = '--app=%APP_URL%'; $s.Description = 'Деномінація Е/Е - Energy Store Group'; $s.Save()"
+powershell -Command "$ws = New-Object -ComObject WScript.Shell; $s = $ws.CreateShortcut('%SHORTCUT_PATH%'); $s.TargetPath = '%BROWSER_PATH%'; $s.Arguments = '--app=%APP_URL%'; $s.Description = 'Номінація Е/Е - Energy Store Group'; $s.Save()"
 
 if exist "%SHORTCUT_PATH%" (
     echo.
